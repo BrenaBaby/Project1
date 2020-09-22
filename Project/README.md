@@ -2,7 +2,11 @@
 
 The files in this repository were used to configure the network depicted below.
 
-```
+      
+
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+
+  ```
 ---
   - name: installing and launching filebeat
     hosts: webservers
@@ -28,7 +32,9 @@ The files in this repository were used to configure the network depicted below.
 
     - name: start filebeat service
       command: sudo service filebeat start
-                                                                                                                                                                                                                                                 - name: download metricbeat                                                                                                                                                                                                                    command: curl https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb -L -O                                                                                                                                 
+      
+    - name: download metricbeat
+      command: curl https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb -L -O                                                                                                                                 
     - name: install metricbeat deb
       command: dpkg -i metricbeat-7.4.0-amd64.deb
 
@@ -47,11 +53,6 @@ The files in this repository were used to configure the network depicted below.
       command: service metricbeat start
 ```
 ---
-      
-
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
-
-  - _TODO: Enter the playbook file._
 
 This document contains the following details:
 - Description of the Topologu
