@@ -2,7 +2,51 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+```
+---
+  - name: installing and launching filebeat
+    hosts: webservers
+    become: yes
+    tasks:
+
+    - name: download filebeat deb
+      command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+
+    - name: install filebeat deb
+      command: dpkg -i filebeat-7.4.0-amd64.deb
+
+    - name: drop in filebeat.yml
+      copy:
+        src: /etc/ansible/files/filebeat-config.yml
+        dest: /etc/filebeat/filebeat.yml
+
+    - name: enable and configure system module
+      command: sudo filebeat modules enable system
+
+    - name: setup filebeat
+      command: sudo filebeat setup
+
+    - name: start filebeat service
+      command: sudo service filebeat start
+                                                                                                                                                                                                                                                 - name: download metricbeat                                                                                                                                                                                                                    command: curl https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb -L -O                                                                                                                                 
+    - name: install metricbeat deb
+      command: dpkg -i metricbeat-7.4.0-amd64.deb
+
+    - name: drop in metricbeat.yml
+      copy:
+        src: /etc/ansible/files/metricbeat-config.yml
+        dest: /etc/metricbeat/metricbeat.yml
+
+    - name: enable metricbeat
+      command: metricbeat modules enable docker
+
+    - name: setup metricbeat
+      command: metricbeat setup
+
+    - name: start metricbeat
+      command: service metricbeat start
+      ```
+      ---
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
