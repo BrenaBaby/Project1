@@ -11,7 +11,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 [Filebeat_Metricbeat_setup.yml](https://github.com/BrenaBaby/Project1/blob/master/Project/YML%20files/Filebeat_Metricbeat_setup.yml)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -23,12 +23,12 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly redundant, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly redundant, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _______ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- Filebeat monitors logs and files on the chosen machines.
+- Metric beat monitors things from systems and services on a machine, such as CPU and memory.
 
 The configuration details of each machine may be found below.
 
@@ -48,8 +48,8 @@ Only the JumpBoxProvisioner machine can accept connections from the Internet. Ac
 
 - 98.224.101.148
 
-Machines within the network can only be accessed by the JumpBoxProvisioner machine.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the JumpBoxProvisioner machine with the IP address of:
+- 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
@@ -82,7 +82,8 @@ This ELK server is configured to monitor the following machines:
 - Web-3: 10.0.0.7
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
