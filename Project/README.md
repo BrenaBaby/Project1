@@ -45,7 +45,8 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the JumpBoxProvisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address:
--98.224.101.148
+
+- 98.224.101.148
 
 Machines within the network can only be accessed by the JumpBoxProvisioner machine.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
@@ -76,9 +77,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
--Web-1: 10.0.0.5
--Web-2: 10.0.0.6
--Web-3: 10.0.0.7
+- Web-1: 10.0.0.5
+- Web-2: 10.0.0.6
+- Web-3: 10.0.0.7
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
