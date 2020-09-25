@@ -26,9 +26,9 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly redundant, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _______ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
 - Filebeat monitors logs and files on the chosen machines.
-- Metric beat monitors things from systems and services on the chosen machines, such as CPU and memory.
+- Metricbeat monitors systems and services on the chosen machines, such as CPU and memory.
 
 The configuration details of each machine may be found below.
 
@@ -53,22 +53,25 @@ Machines within the network can only be accessed by the JumpBoxProvisioner machi
 
 A summary of the access policies in place can be found in the table below.
 
-| Name               | Publicly Accessible | Allowed IP Addresses |
-|--------------------|---------------------|----------------------|
-| JumpBoxProvisioner | Yes                 | 98.224.101.148       |
-| Web-1              | No                  | 10.0.0.4             |
-| Web-2              | No                  | 10.0.0.4             |
-| Web-3              | No                  | 10.0.0.4             |
-| Venison            | Yes                 | 98.224.101.148       |
+| Name               | Publicly Accessible | Allowed IP Addresses         |
+|--------------------|---------------------|------------------------------|
+| JumpBoxProvisioner | Yes                 | 98.224.101.148               |
+| Web-1              | No                  | 10.0.0.4                     |
+| Web-2              | No                  | 10.0.0.4                     |
+| Web-3              | No                  | 10.0.0.4                     |
+| Venison            | Yes                 | 98.224.101.148 10.0.0.4      |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because you don't have to run each one individually and can be run on multiple machines at once.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Installs Docker on the machine
+- Installs python
+- Installs the python module to docker
+- Increases the amount of memory to be used on the machine
+- Sets the machine to use the new increased size of memory
+- Downloads and launches a docker Elk container with the published ports of 5601, 9200, and 5044.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -85,7 +88,7 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat collects logs and files which Metricbeat collects system and service information. Both Filebeat and Metricbeat collect information and displays it in an easy way to analyze and monitor.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
