@@ -34,7 +34,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
       command: sudo service filebeat start
       
     - name: download metricbeat
-      command: curl https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb -L -O                                                                                                                                 
+      command: curl https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb -L -O
+      
     - name: install metricbeat deb
       command: dpkg -i metricbeat-7.4.0-amd64.deb
 
