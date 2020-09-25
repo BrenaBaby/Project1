@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Network diagram map](https://github.com/BrenaBaby/Project1/blob/master/Project/Images/Project%20map%20(1).png)      
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Filebeat_Metricbeat_setup.yml file may be used to install only certain pieces of it, such as Filebeat.
 
 [Elk_deployment.yml](https://github.com/BenjaminBartholomew/Automated_ELK_Stack/blob/master/Ansible_YML_Scripts/install-elk.yml)
 
@@ -34,11 +34,11 @@ The configuration details of each machine may be found below.
 
 | Name               | Function       | IP Address | Operating System |
 |--------------------|----------------|------------|------------------|
-| JumpBoxProvisioner | Gateway        | 10.0.0.4   | Linux            |
-| Web-1              | DVWA container | 10.0.0.5   |                  |
-| Web-2              | DVWA Container | 10.0.0.6   |                  |
-| Web-3              | DVWA Container | 10.0.0.7   |                  |
-| Venison            | ELK Container  | 10.1.0.4   |                  |
+| JumpBoxProvisioner | Gateway        | 10.0.0.4   | Linux Ubuntu 18  |
+| Web-1              | DVWA container | 10.0.0.5   | Linux Ubuntu 18  |
+| Web-2              | DVWA Container | 10.0.0.6   | Linux Ubuntu 18  |
+| Web-3              | DVWA Container | 10.0.0.7   | Linux Ubuntu 18  |
+| Venison            | ELK Container  | 10.1.0.4   | Linux Ubuntu 18  |
 
 ### Access Policies
 
@@ -52,11 +52,13 @@ Machines within the network can only be accessed by _____.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name               | Publicly Accessible | Allowed IP Addresses |
+|--------------------|---------------------|----------------------|
+| JumpBoxProvisioner | Yes                 | 10.0.0.1 10.0.0.2    |
+|                    |                     |                      |
+|                    |                     |                      |
+|                    |                     |                      |
+|                    |                     |                      |
 
 ### Elk Configuration
 
