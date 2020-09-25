@@ -28,7 +28,7 @@ Load balancing ensures that the application will be highly redundant, in additio
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _______ and system _____.
 - Filebeat monitors logs and files on the chosen machines.
-- Metric beat monitors things from systems and services on a machine, such as CPU and memory.
+- Metric beat monitors things from systems and services on the chosen machines, such as CPU and memory.
 
 The configuration details of each machine may be found below.
 
@@ -63,8 +63,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because you don't have to run each one individually and can be run on multiple machines at once.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
@@ -92,13 +91,11 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the Elk_deployment.yml file to ~/etc/ansible/.
+- Update the Elk_deployment.yml file to include the appropriate host group from the ~/etc/ansible/hosts file.
+- Run the playbook, and navigate to http://[elk server public IP]:5601/app/kibana#/home to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- URL for Kibana: http://40.69.160.141:5601/app/kibana#/home
