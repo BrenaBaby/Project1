@@ -23,7 +23,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly redundant, in addition to restricting _____ to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _______ and system _____.
@@ -44,21 +44,21 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the JumpBoxProvisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address:
+-98.224.101.148
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by the JumpBoxProvisioner machine.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
 | Name               | Publicly Accessible | Allowed IP Addresses |
 |--------------------|---------------------|----------------------|
-| JumpBoxProvisioner | Yes                 | 10.0.0.1 10.0.0.2    |
-|                    |                     |                      |
-|                    |                     |                      |
-|                    |                     |                      |
-|                    |                     |                      |
+| JumpBoxProvisioner | Yes                 | 98.224.101.148       |
+| Web-1              | No                  | 10.0.0.4             |
+| Web-2              | No                  | 10.0.0.4             |
+| Web-3              | No                  | 10.0.0.4             |
+| Venison            | Yes                 | 98.224.101.148       |
 
 ### Elk Configuration
 
@@ -76,7 +76,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+-Web-1: 10.0.0.5
+-Web-2: 10.0.0.6
+-Web-3: 10.0.0.7
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
