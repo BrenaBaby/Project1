@@ -21,10 +21,10 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly redundant, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- Load balancing protects against DDos attacks. Creating a jump box creates a single point of entry and prevents the network from unwanted exposure to the public.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
 - Filebeat monitors logs and files on the chosen machines.
@@ -97,8 +97,3 @@ SSH into the control node and follow the steps below:
 - Copy the Elk_deployment.yml file to ~/etc/ansible/.
 - Update the Elk_deployment.yml file to include the appropriate host group from the ~/etc/ansible/hosts file.
 - Run the playbook, and navigate to http://[elk server public IP]:5601/app/kibana#/home to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- URL for Kibana: http://40.69.160.141:5601/app/kibana#/home
