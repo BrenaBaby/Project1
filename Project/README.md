@@ -2,57 +2,11 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Network diagram map](https://github.com/BrenaBaby/Project1/blob/master/Project/Images/Project%20map.png)      
+![Network diagram map](https://github.com/BrenaBaby/Project1/blob/master/Project/Images/Project%20map%20(1).png)      
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-```
----
-  - name: installing and launching filebeat
-    hosts: webservers
-    become: yes
-    tasks:
-
-    - name: download filebeat deb
-      command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
-
-    - name: install filebeat deb
-      command: dpkg -i filebeat-7.4.0-amd64.deb
-
-    - name: drop in filebeat.yml
-      copy:
-        src: /etc/ansible/files/filebeat-config.yml
-        dest: /etc/filebeat/filebeat.yml
-
-    - name: enable and configure system module
-      command: sudo filebeat modules enable system
-
-    - name: setup filebeat
-      command: sudo filebeat setup
-
-    - name: start filebeat service
-      command: sudo service filebeat start
-      
-    - name: download metricbeat
-      command: curl https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb -L -O
-      
-    - name: install metricbeat deb
-      command: dpkg -i metricbeat-7.4.0-amd64.deb
-
-    - name: drop in metricbeat.yml
-      copy:
-        src: /etc/ansible/files/metricbeat-config.yml
-        dest: /etc/metricbeat/metricbeat.yml
-
-    - name: enable metricbeat
-      command: metricbeat modules enable docker
-
-    - name: setup metricbeat
-      command: metricbeat setup
-
-    - name: start metricbeat
-      command: service metricbeat start
-```
+[Elk_deployment.yml](https://github.com/BenjaminBartholomew/Automated_ELK_Stack/blob/master/Ansible_YML_Scripts/install-elk.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -70,19 +24,19 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _______ and system _____.
 - _TODO: What does Filebeat watch for?_
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name               | Function       | IP Address | Operating System |
+|--------------------|----------------|------------|------------------|
+| JumpBoxProvisioner | Gateway        | 10.0.0.4   | Linux            |
+| Web-1              | DVWA container | 10.0.0.5   |                  |
+| Web-2              | DVWA Container | 10.0.0.6   |                  |
+| Web-3              | DVWA Container | 10.0.0.7   |                  |
+| Venison            | ELK Container  | 10.1.0.4   |                  |
 
 ### Access Policies
 
