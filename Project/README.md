@@ -8,6 +8,10 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 [Elk_deployment.yml](https://github.com/BenjaminBartholomew/Automated_ELK_Stack/blob/master/Ansible_YML_Scripts/install-elk.yml)
 
+[Filebeat_config.yml](https://github.com/BrenaBaby/Project1/blob/master/Project/YML%20files/Filebeat_config.yml)
+
+[Metricbeat_config.yml](https://github.com/BrenaBaby/Project1/blob/master/Project/YML%20files/Metricbeat_config.yml)
+
 [Filebeat_Metricbeat_setup.yml](https://github.com/BrenaBaby/Project1/blob/master/Project/YML%20files/Filebeat_Metricbeat_setup.yml)
 
 This document contains the following details:
